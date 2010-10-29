@@ -1,24 +1,19 @@
-/*
- * ItemWorker.h
- *
- *  Created on: 2010-10-28
- *      Author: cdunphy
- */
-
 #ifndef ITEMWORKER_H_
 #define ITEMWORKER_H_
 
+#include <iostream>
 #include <cstddef>
 #include <queue>
 
 #include <boost/thread.hpp>
 
-#include "Item.hh"
+#include "Item.h"
 
 namespace rcd 
 {
     class ItemWorker {
         const static int NUM_ITERATIONS = 50;
+
     public:
         ItemWorker(std::queue<Item>& iq) : queue(iq) { }
         virtual ~ItemWorker() { }

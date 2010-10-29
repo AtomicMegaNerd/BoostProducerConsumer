@@ -1,11 +1,4 @@
-/*
- * ItemProducer.cpp
- *
- *  Created on: 2010-10-27
- *      Author: cdunphy
- */
-
-#include "ItemProducer.hh"
+#include "ItemProducer.h"
 
 namespace rcd 
 {

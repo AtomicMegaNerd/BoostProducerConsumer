@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,13 +26,13 @@
 
 /* Begin PBXFileReference section */
 		4CD7CA15127B6A49000DD525 /* Item.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
-		4CD7CA16127B6A49000DD525 /* Item.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Item.hh; sourceTree = "<group>"; };
+		4CD7CA16127B6A49000DD525 /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		4CD7CA17127B6A49000DD525 /* ItemConsumer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ItemConsumer.cpp; sourceTree = "<group>"; };
-		4CD7CA18127B6A49000DD525 /* ItemConsumer.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ItemConsumer.hh; sourceTree = "<group>"; };
+		4CD7CA18127B6A49000DD525 /* ItemConsumer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemConsumer.h; sourceTree = "<group>"; };
 		4CD7CA19127B6A49000DD525 /* ItemProducer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ItemProducer.cpp; sourceTree = "<group>"; };
-		4CD7CA1A127B6A49000DD525 /* ItemProducer.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ItemProducer.hh; sourceTree = "<group>"; };
+		4CD7CA1A127B6A49000DD525 /* ItemProducer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemProducer.h; sourceTree = "<group>"; };
 		4CD7CA1C127B6A49000DD525 /* ItemWorker.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ItemWorker.cpp; sourceTree = "<group>"; };
-		4CD7CA1D127B6A49000DD525 /* ItemWorker.hh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ItemWorker.hh; sourceTree = "<group>"; };
+		4CD7CA1D127B6A49000DD525 /* ItemWorker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemWorker.h; sourceTree = "<group>"; };
 		4CD7CA1F127B6A68000DD525 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* BoostProducerConsumer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BoostProducerConsumer; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* BoostProducerConsumer.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BoostProducerConsumer.1; sourceTree = "<group>"; };
@@ -64,13 +64,13 @@
 			children = (
 				4CD7CA1F127B6A68000DD525 /* main.cpp */,
 				4CD7CA15127B6A49000DD525 /* Item.cpp */,
-				4CD7CA16127B6A49000DD525 /* Item.hh */,
+				4CD7CA16127B6A49000DD525 /* Item.h */,
 				4CD7CA17127B6A49000DD525 /* ItemConsumer.cpp */,
-				4CD7CA18127B6A49000DD525 /* ItemConsumer.hh */,
+				4CD7CA18127B6A49000DD525 /* ItemConsumer.h */,
 				4CD7CA19127B6A49000DD525 /* ItemProducer.cpp */,
-				4CD7CA1A127B6A49000DD525 /* ItemProducer.hh */,
+				4CD7CA1A127B6A49000DD525 /* ItemProducer.h */,
 				4CD7CA1C127B6A49000DD525 /* ItemWorker.cpp */,
-				4CD7CA1D127B6A49000DD525 /* ItemWorker.hh */,
+				4CD7CA1D127B6A49000DD525 /* ItemWorker.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "BoostProducerConsumer" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			hasScannedForEncodings = 1;
 			mainGroup = 08FB7794FE84155DC02AAC07 /* BoostProducerConsumer */;
 			projectDirPath = "";
@@ -174,8 +174,10 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "/usr/local/include/boost-1_37/**";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lboost_thread";
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};
@@ -188,7 +190,9 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "/usr/local/include/boost-1_37/**";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = "-lboost_thread";
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
 			};

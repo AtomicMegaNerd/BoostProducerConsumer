@@ -1,13 +1,4 @@
-/*
- * ItemConsumer.cpp
- *
- *  Created on: 2010-10-27
- *      Author: cdunphy
- */
-
-#include "ItemConsumer.hh"
-
-using boost::mutex;
+#include "ItemConsumer.h"
 
 namespace rcd 
 {

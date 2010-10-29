@@ -1,11 +1,4 @@
-/*
- * ItemWorker.cpp
- *
- *  Created on: 2010-10-28
- *      Author: cdunphy
- */
-
-#include "ItemWorker.hh"
+#include "ItemWorker.h"
 
 namespace rcd 
 {

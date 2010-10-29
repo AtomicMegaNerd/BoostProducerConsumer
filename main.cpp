@@ -2,9 +2,9 @@
 #include <iostream>
 #include <queue>
 
-#include "Item.hh"
-#include "ItemConsumer.hh"
-#include "ItemProducer.hh"
+#include "Item.h"
+#include "ItemConsumer.h"
+#include "ItemProducer.h"
 
 using std::cout;
 using std::endl;
@@ -17,14 +17,14 @@ using rcd::ItemProducer;
 int main()
 {
 	queue<Item> iq;
-	ItemProducer p1(iq);
-	ItemConsumer c1(iq);
+    ItemProducer p1(iq);
+    ItemConsumer c1(iq);
 
-	p1.start();
-	c1.start();
+//	p1.start();
+//	c1.start();
 
-	p1.join();
-	c1.join();
+//	p1.join();
+//	c1.join();
 
 	cout << "Finished!" << endl;
 

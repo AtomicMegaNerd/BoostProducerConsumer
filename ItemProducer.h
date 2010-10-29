@@ -1,20 +1,7 @@
-/*
- * ItemProducer.h
- *
- *  Created on: 2010-10-27
- *      Author: cdunphy
- */
-
 #ifndef ITEMPRODUCER_H_
 #define ITEMPRODUCER_H_
 
-#include <iostream>
-#include <queue>
-
-#include <boost/thread.hpp>
-
-#include "Item.hh"
-#include "ItemWorker.hh"
+#include "ItemWorker.h"
 
 namespace rcd 
 {

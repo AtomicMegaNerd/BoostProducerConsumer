@@ -1,4 +1,5 @@
 #include "Item.hh"
+
 namespace rcd 
 {
     // Static initializer

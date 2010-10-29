@@ -1,20 +1,7 @@
-/*
- * ItemConsumer.h
- *
- *  Created on: 2010-10-27
- *      Author: cdunphy
- */
-
 #ifndef ITEMCONSUMER_H_
 #define ITEMCONSUMER_H_
 
-#include <iostream>
-#include <queue>
-
-#include <boost/thread.hpp>
-
-#include "Item.hh"
-#include "ItemWorker.hh"
+#include "ItemWorker.h"
 
 namespace rcd 
 {

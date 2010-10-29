@@ -1,9 +1,3 @@
-/*
- * Holder.hh
- *
- *  Created on: 2010-10-27
- *      Author: cdunphy
- */
 #ifndef RCD_ITEM_HH_
 #define RCD_ITEM_HH_
 
