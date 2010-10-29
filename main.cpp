@@ -1,30 +1,26 @@
 #include <cstring>
 #include <iostream>
-#include <queue>
+#include <string>
 
-#include "Item.h"
 #include "ItemConsumer.h"
 #include "ItemProducer.h"
 
 using std::cout;
 using std::endl;
-using std::queue;
 
-using rcd::Item;
 using rcd::ItemConsumer;
 using rcd::ItemProducer;
 
 int main()
 {
-	queue<Item> iq;
-    ItemProducer p1(iq);
-    ItemConsumer c1(iq);
+    ItemProducer p1;
+    ItemConsumer c1;
 
-//	p1.start();
-//	c1.start();
+    p1.start();
+    c1.start();
 
-//	p1.join();
-//	c1.join();
+    p1.join();
+    c1.join();
 
 	cout << "Finished!" << endl;
 

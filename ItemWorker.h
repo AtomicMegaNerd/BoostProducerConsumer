@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cstddef>
 #include <queue>
+#include <string>
 
 #include <boost/thread.hpp>
 
@@ -11,11 +12,10 @@
 
 namespace rcd 
 {
-    class ItemWorker {
-        const static int NUM_ITERATIONS = 50;
-
+    class ItemWorker {        
     public:
-        ItemWorker(std::queue<Item>& iq) : queue(iq) { }
+        const static std::size_t NUM_ITERATIONS = 50;
+        ItemWorker() : iter(0) { }
         virtual ~ItemWorker() { }
 
         void start() { work_thread = boost::thread(&ItemWorker::work, this); }
@@ -23,7 +23,8 @@ namespace rcd
         virtual void work() = 0;
 
     protected:
-        std::queue<Item>& queue; // shared by reference
+        std::size_t iter;
+        static std::queue<Item> iq; // shared
         static boost::mutex w_mutex; // shared
         static boost::condition_variable_any is_empty; // shared
 

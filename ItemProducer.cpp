@@ -3,20 +3,19 @@
 namespace rcd 
 {
     void ItemProducer::work() {
-        int iters = 0;
         while (true) {
-            boost::mutex::scoped_lock lock(w_mutex);
+            boost::mutex::scoped_lock p_lock(w_mutex);
 
-            if (iters >= NUM_ITERATIONS)
+            if (iter >= NUM_ITERATIONS)
                 break;
             
-            Item item;
-            item_queue.push(item);
-            std::cout << "Pushed " << item
-                    << " into the back of the queue!" << std::endl;
-            iters++;
+            // Adding a number to the string messes it up bad!
+            Item item("Item", iter);
+            iq.push(item);
+            std::cout << "Pushed " << item << " into queue!" << std::endl;
+            iter++;
             
-            lock.unlock();
+            p_lock.unlock();
             is_empty.notify_one();
         }
     }

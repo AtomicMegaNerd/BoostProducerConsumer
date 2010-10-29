@@ -2,18 +2,20 @@
 #define RCD_ITEM_HH_
 
 #include <string>
+#include <cstddef>
 #include <iostream>
 
 namespace rcd 
-{
+{    
     class Item {
         friend std::ostream& operator<<(std::ostream& out, const Item& item);
-        static long id;
     public:
-        Item() : label("Item" + id) { id++; }
-        std::string get_label() const { return label; }        
+        Item(std::string lbl, std::size_t ix) : label(lbl), index(ix) { }
+        const std::string get_label() const { return label; }
+        const std::size_t get_index() const { return index; }
     private:
         std::string label;
+        std::size_t index;
     };
 }
 
