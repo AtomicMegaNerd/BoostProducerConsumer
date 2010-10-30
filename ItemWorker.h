@@ -14,8 +14,10 @@ namespace rcd
 {
     class ItemWorker {        
     public:
-        const static std::size_t NUM_ITERATIONS = 50;
-        ItemWorker() : iter(0) { }
+        const static std::size_t MAX_QUEUE_SIZE = 50;
+        const static std::size_t NUM_ITERATIONS = 500;
+        
+        ItemWorker(std::queue<Item>& iq) : iq_queue(iq), iter(0) { }
         virtual ~ItemWorker() { }
 
         void start() { work_thread = boost::thread(&ItemWorker::work, this); }
@@ -24,9 +26,10 @@ namespace rcd
 
     protected:
         std::size_t iter;
-        static std::queue<Item> iq; // shared
-        static boost::mutex w_mutex; // shared
-        static boost::condition_variable_any is_empty; // shared
+        std::queue<Item>& iq_queue; // shared
+        static boost::mutex iq_mutex; // shared
+        static boost::condition_variable_any iq_empty; // shared
+        static boost::condition_variable_any iq_full; // shared
 
     private:
         boost::thread work_thread; // each instance has own thread

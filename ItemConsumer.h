@@ -7,6 +7,7 @@ namespace rcd
 {
     class ItemConsumer : public ItemWorker {
     public:
+        ItemConsumer(std::queue<Item>& iq) : ItemWorker(iq) { }
         void work();
     };
 }

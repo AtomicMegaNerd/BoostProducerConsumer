@@ -3,7 +3,7 @@
 namespace rcd 
 {
     // Static initializations
-    std::queue<Item> ItemWorker::iq;
-    boost::mutex ItemWorker::w_mutex;
-    boost::condition_variable_any ItemWorker::is_empty;
+    boost::mutex ItemWorker::iq_mutex;
+    boost::condition_variable_any ItemWorker::iq_empty;
+    boost::condition_variable_any ItemWorker::iq_full;
 }
