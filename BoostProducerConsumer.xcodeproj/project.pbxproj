@@ -32,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4C66FB90127BC2AE0080239E /* BoundedQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoundedQueue.h; sourceTree = "<group>"; };
 		4C9EE8BA127B8AAD0082F8C5 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		4C9EE8C2127B8BD20082F8C5 /* Item.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
 		4CD7CA17127B6A49000DD525 /* ItemConsumer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ItemConsumer.cpp; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 				4CD7CA1D127B6A49000DD525 /* ItemWorker.h */,
 				4C9EE8BA127B8AAD0082F8C5 /* Item.h */,
 				4C9EE8C2127B8BD20082F8C5 /* Item.cpp */,
+				4C66FB90127BC2AE0080239E /* BoundedQueue.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";

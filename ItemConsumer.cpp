@@ -6,7 +6,7 @@ namespace rcd
         while (true) {
             boost::mutex::scoped_lock c_lock(iq_mutex);
 
-            if (iter >= NUM_ITERATIONS)
+            if (cur_iteration >= num_iterations)
                 break;
             
             while (iq_queue.empty()) {
@@ -16,7 +16,7 @@ namespace rcd
             Item item = iq_queue.front();
             iq_queue.pop();
             std::cout << "Popped " << item << " from the queue" << std::endl;
-            iter++;
+            cur_iteration++;
             
             c_lock.unlock();
             iq_full.notify_one();

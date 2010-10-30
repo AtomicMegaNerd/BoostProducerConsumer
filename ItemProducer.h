@@ -7,7 +7,8 @@ namespace rcd
 {
     class ItemProducer : public ItemWorker {
     public:
-        ItemProducer(std::queue<Item>& iq) : ItemWorker(iq) { }
+        ItemProducer(BoundedQueue<Item>& iq, std::size_t num_iters) : 
+            ItemWorker(iq, num_iters) { }
         void work();
     };
 }
