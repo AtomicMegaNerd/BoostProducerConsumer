@@ -13,10 +13,12 @@ namespace rcd
                 iq_full.wait(p_lock);
             }
             
-            Item item("Item", cur_iteration);
-            iq_queue.push(item);
-            std::cout << "Pushed " << item << " into queue!" << std::endl;
-            cur_iteration++;
+            if (!iq_queue.full()) {
+                Item item("Item", cur_iteration);
+                iq_queue.push(item);
+                std::cout << "Pushed " << item << " into queue!" << std::endl;
+                cur_iteration++;
+            }
             
             p_lock.unlock();
             iq_empty.notify_one();

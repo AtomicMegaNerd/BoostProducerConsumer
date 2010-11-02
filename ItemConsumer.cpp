@@ -12,11 +12,13 @@ namespace rcd
             while (iq_queue.empty()) {
                 iq_empty.wait(c_lock);
             }
-                     
-            Item item = iq_queue.front();
-            iq_queue.pop();
-            std::cout << "Popped " << item << " from the queue" << std::endl;
-            cur_iteration++;
+            
+            if (!iq_queue.empty()) {
+                Item item = iq_queue.front();
+                iq_queue.pop();
+                std::cout << "Popped " << item << " from the queue" << std::endl;
+                cur_iteration++;
+            }
             
             c_lock.unlock();
             iq_full.notify_one();
