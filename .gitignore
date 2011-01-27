@@ -1,7 +1,10 @@
 CMakeCache.txt
 CMakeFiles
 cmake_install.cmake
-bin/*
+*.so
+*.o
+*.a
+bpc_client
 *~
 .*~
 Makefile
