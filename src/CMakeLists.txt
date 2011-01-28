@@ -16,7 +16,6 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 
 # The sources for our library
 set(bpc_srcs
-  BoundedQueue.cpp
   ItemConsumer.cpp
   Item.cpp
   ItemProducer.cpp

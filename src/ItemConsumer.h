@@ -3,14 +3,15 @@
 
 #include "ItemWorker.h"
 
-namespace rcd 
-{
-    class ItemConsumer : public ItemWorker {
-    public:
-        ItemConsumer(BoundedQueue<Item>& iq, std::size_t num_iters) : 
-            ItemWorker(iq, num_iters) { }
-        void work();
-    };
+namespace rcd {
+
+class ItemConsumer : public ItemWorker {
+public:
+     ItemConsumer(BoundedQueue<Item>& iq, std::size_t num_iters) :
+          ItemWorker(iq, num_iters) { }
+     void work();
+};
+
 }
 
 #endif /* ITEMCONSUMER_H_ */
